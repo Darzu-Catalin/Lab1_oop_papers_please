@@ -67,7 +67,7 @@ public class FileManager {
         JsonNode traits = entry.has("traits") ? entry.get("traits") : null;
         System.out.println("\n");
         System.out.println("ID: " + id);
-        System.out.println("Is Humanoid: " + entry.get("isHumanoid").asText());
+        System.out.println("Is Humanoid: " + entry.get("isHumanoid"));
         System.out.println("Planet: " + planet);
         System.out.println("Age: " + (age > 0 ? age : "UNKNOWN"));
         System.out.println("Traits: " + (traits != null ? traits : "UNKNOWN"));

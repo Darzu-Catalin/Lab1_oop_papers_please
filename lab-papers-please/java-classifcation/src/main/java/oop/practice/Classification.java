@@ -1,6 +1,5 @@
 package oop.practice;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Classification {
@@ -109,7 +108,7 @@ public class Classification {
 //    }
 public static int getClassification(Individual individual) {
     BooleanState isHumanoid = individual.getHumanoidStatus();
-    String planet = individual.getPlanet();
+    String planet = individual.getPlanet().toString();
     Integer age = individual.getAge(); // Can be null
     List<String> traits = individual.getTraits();
 
