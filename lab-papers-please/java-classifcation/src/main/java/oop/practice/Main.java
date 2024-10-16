@@ -78,9 +78,9 @@ public class Main {
     System.out.println("\n");
     ViewOutput.showStarWars();
     System.out.println("\n");
-    ViewOutput.showHitchhiker();
-    System.out.println("\n");
     ViewOutput.showMarvel();
+    System.out.println("\n");
+    ViewOutput.showHitchhiker();
     System.out.println("\n");
     ViewOutput.showRings();
   }
