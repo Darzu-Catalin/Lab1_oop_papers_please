@@ -19,7 +19,7 @@ public class Individual {
     @JsonDeserialize(using = BooleanStateDeserializer.class)
     private BooleanState isHumanoid = BooleanState.UNKNOWN;
     @JsonProperty("planet")
-    private String planet = "UNKNOWN";
+    private Planets planet = Planets.UNKNOWN;
     @JsonProperty("age")
     private int age;
     @JsonProperty("traits")
@@ -28,7 +28,7 @@ public class Individual {
     public Individual(){
 
     }
-    public Individual(int id, boolean humanoid, String planet, int age, ArrayList<String> traits) {
+    public Individual(int id, boolean humanoid, Planets planet, int age, ArrayList<String> traits) {
         this.id = id;
         if(humanoid){
             this.isHumanoid = BooleanState.TRUE;
@@ -57,11 +57,11 @@ public class Individual {
         isHumanoid = humanoid;
     }
 
-    public String getPlanet() {
+    public Planets getPlanet() {
         return planet;
     }
 
-    public void setPlanet(String planet) {
+    public void setPlanet(Planets planet) {
         this.planet = planet;
     }
 
