@@ -3,6 +3,7 @@ package oop.practice;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import java.io.File;
 import java.io.IOException;
@@ -50,9 +51,11 @@ public class Main {
 
     for (Individual individual : individualsList) {
       JsonNode jsonNode = mapper.valueToTree(individual);
+      ObjectNode filteredEntry = (ObjectNode) jsonNode.deepCopy();
+      filteredEntry.remove("humanoidStatus");
+      jsonNode = filteredEntry;
       switch (Classification.getClassification(individual)) {
         case 1:
-
           starWars.individuals().add(jsonNode);
           break;
         case 2:
@@ -78,9 +81,9 @@ public class Main {
     System.out.println("\n");
     ViewOutput.showStarWars();
     System.out.println("\n");
-    ViewOutput.showHitchhiker();
-    System.out.println("\n");
     ViewOutput.showMarvel();
+    System.out.println("\n");
+    ViewOutput.showHitchhiker();
     System.out.println("\n");
     ViewOutput.showRings();
   }
